@@ -1,0 +1,22 @@
+[
+  "vix_level",
+  "spy_vs_sma200",
+  "spy_ret_5d",
+  "vix_vs_ma20",
+  "log_ret_10d",
+  "spy_rsi_14",
+  "spy_ret_20d",
+  "spy_vol_20",
+  "macd_signal",
+  "close_vs_sma50",
+  "close_vs_sma200",
+  "sma10_vs_sma50",
+  "macd_hist",
+  "log_ret_5d",
+  "close_vs_sma10",
+  "rsi_mean_14",
+  "vol_ratio",
+  "sma20_vs_sma50",
+  "ret_std_20",
+  "slope_5"
+]

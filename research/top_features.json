@@ -1,0 +1,22 @@
+[
+  "atr_14",
+  "ret_std_20",
+  "rsi_28",
+  "bb_width",
+  "macd",
+  "macd_hist",
+  "sma20_vs_sma50",
+  "close_vs_sma200",
+  "rsi_mean_14",
+  "macd_signal",
+  "sma10_vs_sma50",
+  "realised_vol_20",
+  "ema_cross",
+  "rsi_trend",
+  "ret_skew_20",
+  "ret_std_10",
+  "slope_20",
+  "close_vs_sma50",
+  "close_vs_sma10",
+  "roc_20"
+]
