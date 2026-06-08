@@ -1,18 +1,4 @@
-"""
-Diagnostic: does cross-sectional signal exist in these features, and at what horizon?
-
-Computes the cross-sectional rank Information Coefficient (IC) of each technical
-feature vs forward returns at several horizons. Rank IC here = correlation between
-per-day cross-sectional feature ranks and per-day forward-return ranks (pooled),
-a fast proxy for the mean daily Spearman IC.
-
-Rough reading:
-  |IC| ~ 0.00-0.01  -> noise, no usable cross-sectional signal
-  |IC| ~ 0.02-0.05  -> weak but real signal (typical for equity factors)
-  |IC| > 0.05       -> strong (rare on liquid large caps)
-
-Downloads once and caches the panel to diag_panel.parquet for reuse.
-"""
+"""Measures cross-sectional rank IC for each feature vs forward returns at 5, 10, 21, and 63-day horizons."""
 
 import numpy as np
 import pandas as pd
