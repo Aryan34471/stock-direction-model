@@ -1,19 +1,4 @@
-"""
-Walk-forward (rolling-retrain) test of the cross-sectional H=63 signal.
-
-Non-stationarity is the problem: a model trained once on 2015-2023 doesn't hold in
-2024-2025. Walk-forward retrains on a trailing window and predicts the next month,
-so the model always reflects the recent regime. If the signal is locally persistent
-(even while drifting), this should recover OOS edge that the single-train model lost.
-
-Leakage control: to label a training row dated T we need its 63-day forward return,
-known only at T+63. So for a prediction date D we train ONLY on rows with T <= D-63
-(a 63-day purge). Prediction rows' forward returns are future outcomes used purely
-for evaluation, never for training. Cross-sectional feature ranks are per-day, so
-they carry no cross-date information.
-
-Reuses diag_panel.parquet (no re-download).
-"""
+"""Walk-forward test - retrains monthly on a rolling window to check if rolling retraining recovers OOS signal."""
 
 import numpy as np
 import pandas as pd
