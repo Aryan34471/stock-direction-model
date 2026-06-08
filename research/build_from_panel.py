@@ -1,8 +1,4 @@
-"""
-Rebuild the cross-sectional train/val/test parquet at a chosen horizon, reusing the
-cached diag_panel.parquet (raw features + multi-horizon forward returns). Avoids
-re-downloading. Usage:  python build_from_panel.py [HORIZON]   (default 21)
-"""
+"""Rebuild train/val/test at any horizon from the cached panel. Usage: python build_from_panel.py [HORIZON]"""
 
 import sys
 import os
