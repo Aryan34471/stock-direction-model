@@ -1,21 +1,4 @@
-"""
-Capstone: does the contrarian market-timing signal beat buy-and-hold on a
-risk-adjusted basis? Deliberately SIMPLE and NOT fitted, to avoid the overfitting
-trap this whole investigation has been about:
-
-  - Signal = mean of point-in-time 252-day z-scores of four features, with signs
-    FIXED from economic priors (not optimised): +vix_level, +spy_vol_20,
-    -spy_vs_sma200, -spy_rsi_14 (more fear / oversold / below-trend -> more bullish).
-  - Exposure = clip(1 + composite_z, 0, 2). Average exposure ~1, so it's a fair
-    Sharpe comparison to buy-and-hold (1.0), not just added leverage.
-  - Exposure is LAGGED one day before applying the next day's return (no look-ahead).
-    All features are backward-looking; z-scores use only trailing data.
-
-CAVEATS: single 9-year path; signs are priors but informed by the same data (mild
-circularity); transaction costs from daily exposure changes are ignored; the 252-day
-window is a mild choice. Read this as "is the direction promising," not a deployable
-strategy.
-"""
+"""Tests whether the contrarian market-timing signal beats buy-and-hold on a risk-adjusted basis."""
 
 import numpy as np
 import pandas as pd
