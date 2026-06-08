@@ -1,18 +1,4 @@
-"""
-Diagnostic for recommendation #1: does the macro/vol feature set predict the MARKET
-(time-series), and does it persist out-of-sample? This is the "market timing"
-hypothesis - the only signal that survived OOS in the cross-sectional work.
-
-Market proxy = equal-weight universe forward return (mean of fwd_H across tickers
-per day, from the cached panel). Macro features come from SPY/VIX. We report the
-time-series Spearman correlation of each macro feature with the forward market
-return, full-sample vs test period.
-
-CAVEAT: daily obs with overlapping H-day forward windows are highly autocorrelated,
-so these correlations have wide confidence intervals - read them as directional
-evidence, not precise estimates. Market timing genuinely needs more independent
-data (decades, or higher frequency) to validate; this is a first look only.
-"""
+"""Checks whether macro features predict the market's forward return, full-sample vs out-of-sample."""
 
 import numpy as np
 import pandas as pd
