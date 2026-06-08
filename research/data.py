@@ -1,19 +1,4 @@
-"""
-Data pipeline - cross-sectional (relative-performance) reframe.
-
-Instead of predicting whether each stock goes up in absolute terms (which is
-dominated by the whole market moving), we predict whether a stock OUTPERFORMS
-the rest of the universe over the next HORIZON days:
-
-  - label:    rank each day's forward return across all tickers. Top tercile = 1
-              (outperform), bottom tercile = 0 (underperform), middle is dropped.
-  - features: each technical feature is converted to its cross-sectional
-              percentile rank per day, so the model sees relative strength rather
-              than absolute levels. This also strips out market-wide (macro)
-              signal, since macro features are ~constant across the cross-section.
-
-Splits into train/val/test with a purge gap, saves parquet files.
-"""
+"Cross-sectional data pipeline - labels stocks by relative performance vs the universe."
 
 import os
 import time
