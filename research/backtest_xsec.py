@@ -1,16 +1,4 @@
-"""
-Market-neutral long/short factor backtest for the cross-sectional model.
-
-Reuses diag_panel.parquet (raw features + fwd_63), so no re-download. Each day the
-ensemble scores the whole universe; we long the top quintile and short the bottom
-quintile (equal weight) and measure the realised H-day forward spread. This is the
-standard way to judge a cross-sectional signal - it isolates stock selection from
-market direction.
-
-NOTE: overlapping H-day windows, so the annualised figure is a rough point estimate
-(autocorrelated daily obs -> wide confidence interval). Read the spread + decile
-monotonicity, not the headline annualised number.
-"""
+"""Market-neutral long/short factor backtest - sorts universe by model score, measures forward spread."""
 
 import json
 import pickle
