@@ -1,15 +1,4 @@
-"""
-Backtest for the cross-sectional XGBoost ensemble.
-
-At each day, raw technical features are computed for the whole universe, then
-ranked cross-sectionally (per day) into [0, 1] - the same transform used in
-training. The model predicts P(outperform the universe); we go long the
-highest-conviction names. Trading rules (ATR stops, 50MA filter, conviction-drop
-exit, earnings avoidance) are unchanged from the baseline so the comparison
-isolates the effect of the cross-sectional signal.
-
-Saves trade + daily logs to backtest_results_xgb/.
-"""
+"""Backtest for the cross-sectional ensemble - features ranked across the universe each day."""
 
 import os
 import json
